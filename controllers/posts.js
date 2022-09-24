@@ -32,17 +32,12 @@ module.exports = {
   createPost: async (req, res) => {
     try {
       // Upload image to cloudinary
-      const img_result = await cloudinary.uploader.upload(req.file1.path, {
-      });
-
-      const audio_result = await cloudinary.uploader.upload(req.file2.path, {
-        resource_type: "video"
-      });
+      const result = await cloudinary.uploader.upload(req.file.path)
 
       await Post.create({
         title: req.body.title,
-        image: img_result.secure_url,
-        audio: audio_result.secure_url,
+        image: result.secure_url,
+        audio: result.secure_url,
         cloudinaryId: result.public_id,
         caption: req.body.caption,
         likes: 0,
