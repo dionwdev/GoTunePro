@@ -1,55 +1,153 @@
-<%- include('partials/header') -%>
-<div class="container">
-  <div class="row justify-content-center mt-5">
-    <div class="col-6">
-      <h2><%= post.title %></h2>
-      <img class="img-fluid" src="<%= post.image%>" />
-      <div class="row justify-content-between">
-        <form
-          class="col-1"
-          action="/post/likePost/<%= post.id %>?_method=PUT"
-          method="POST"
-        >
-          <button class="btn btn-primary fa fa-heart" type="submit"></button>
-        </form>
-        <h3 class="col-3">Likes: <%= post.likes %></h3>
-        <%if(post.user == user.id){ %>
-        <form
-          action="/post/deletePost/<%= post.id %>?_method=DELETE"
-          method="POST"
-          class="col-3"
-        >
-          <button class="btn btn-primary fa fa-trash" type="submit"></button>
-        </form>
-        <%}%>
-      </div>
-    </div>
-    <div class="col-3 mt-5">
-      <p><%= post.caption %></p>
-    </div>
-    <div class="mt-5">
-      <h2>Add a comment</h2>
-      <form action="/comment/createComment/<%= post._id%>" method="POST">
-        <div class="mb-3">
-            <label for="comment" class="form-label">Comment</label>
-            <input type="text" class="form-control" id="comment" name="comment">
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
-    </div>
-    <ul>
-      <% for(var i=0; i<comments.length; i++) {%>
-        <li class="col-6 justify-content-between mt-5">
-          <%= comments[i].comment%>
-        </li>
-      <% } %>
-    </ul>
-    
-    <div class="col-6 mt-5">
-      <a class="btn btn-primary" href="/profile">Return to Profile</a>
-      <a class="btn btn-primary" href="/feed">Return to Feed</a>
-    </div>
-  </div>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    	<meta charset="utf-8">
+    	<meta name="description" content="">
+    	<meta name="keywords" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,500;0,700;0,900;1,200;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+		<title>media player</title>
 
-<%- include('partials/footer') -%>
+		<!-- external CSS link -->
+		<link rel="stylesheet" href="/css/reset.css">
+		<link rel="stylesheet" href="/css/playstyle.css">
+	</head>
+	<body>
+
+	<header>
+		<h1><img id="navlogo" alt="GoTune.Pro" src="/imgs/navlogo.png"></h1>
+		<div class="goto"><img id="goto" alt="goto" src="/imgs//goto1.gif"></div>
+		
+		<button class="openbtn" onclick="openNav()">☰</button>  
+	</header>
+
+<!--SIDE PANEL -->
+	<div id="mySidepanel" class="sidepanel">
+		<!-- Sign in and X button -->
+		<div class="side-top">
+		<a href="#" id="accountLink">log in/sign up</a>
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+		</div>
+		
+	<!--Credits-->
+		<div class="credits">
+			
+			<div class="credit-header">
+				<!--album cover-->
+				<div class="sideCover-container">
+					<img id="sideCover" src=<%= post.image %> alt="covert art">
+				</div>
+				<!--Titles-->
+				<div class="sideTitle-container">
+					<h2><%= post.title %></h2>
+					<h2><%= post.artist %></h2>
+				</div>
+					
+			</div>
+
+			<!--Credit List-->
+			<ul class="sideCat">
+			 	<li cat>Performers
+					<ul class="sideCred">
+						<li> <%= post.artist %> </li>
+					</ul>
+				</li>
+
+				<li>Writers 
+					<ul class="sideCred">
+						<li><%= post.writers %></li>
+					</ul>
+				</li>
+			</ul>
+
+				<ul class="sideCat">
+				<li>Composers
+					<ul class="sideCred">
+						<li><li><%= post.composers %></li></li>
+					</ul>
+				</li>
+
+				<li>Release Date
+					<ul class="sideCred">
+						<li><%= post.release %></li>
+					</ul>
+				</li>
+			</ul>
+			<!--End Credit List-->
+			<div class=creditLinks-header>
+				<h3>Get Song</h3>
+			</div>
+			<div class="credit-links">
+				
+				<a target="_blank" href="#">
+				<img src="/imgs//id-spot.png">
+				</a>
+				<a target="_blank" href="#">
+					<img src="/imgs//id-amzn.png">
+					</a>
+				<a target="_blank" href="#">
+				<img src="/imgs//id-tidal.png">
+				</a>
+				<a target="_blank" href="#">
+				<img src="/imgs//id-apple.png">
+				</a>
+			</div>
+			<div class=creditLinks-header>
+				<h3>@</h3>
+			</div>
+			<div class="credit-links">
+				
+				<a target="_blank" href="#">
+				<img src="/imgs//id-twitter.png">
+				</a>
+				<a target="_blank" href="#">
+				<img src="/imgs//id-insta.png">
+				</a>
+				<a target="_blank" href="#">
+				<img src="/imgs//id-web.png">
+				</a>
+			</div>
+
+		</div>
+	</div>
+<!--END SIDE PANEL -->
+
+<!--MUSIC PLAYER -->
+	<div class="music-container">
+				
+		<div class ="img-container">
+			<img src = <%= post.image %> alt="cover-art" id="cover">
+		</div>
+
+		<div class ="music-info">
+			<h2 id="title"> <%= post.title %> </h2>
+			<h2 id="artist"> <%= post.artist %> </h2>
+			<div class="progress-container">
+				<div class="progress"></div>
+			</div>
+			
+		</div>
+       
+		<audio src=<%= post.audio %> id="audio"></audio>
+
+		<div class="navigation">
+			<button id="prev" class="action-btn">
+				<i class="fas fa-backward"></i>
+			</button>
+	
+			<button id="play" class="action-btn-big">
+				<i class="fas fa-play"></i>
+			</button>
+		</div>
+
+		
+	</div>
+
+	<div class="bg"></div>
+<!--END MUSIC PLAYER -->
+		<script type="text/javascript" src="/js/play.js"></script>
+	</body>
+</html>

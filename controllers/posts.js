@@ -31,18 +31,24 @@ module.exports = {
   },
   createPost: async (req, res) => {
     try {
-      // Upload image to cloudinary
-      const result = await cloudinary.uploader.upload(req.file.path, {
+  
+      // const result = await cloudinary.uploader.upload(req.file.path, {
+      //   resource_type: "video"
+      // });
+
+     const result = await cloudinary.uploader.upload(req.file.path, {
         resource_type: "video"
       });
 
       await Post.create({
         title: req.body.title,
-        image: result.secure_url,
+        artist: req.body.artist,
+        image: "https://res.cloudinary.com/frog123/image/upload/v1664062997/GOTUNElogo_500_500_px_300_300_px_uskniu.jpg",
         audio: result.secure_url,
+        writers: req.body.writers,
+        composers: req.body.composers,
+        release: req.body.release,
         cloudinaryId: result.public_id,
-        caption: req.body.caption,
-        likes: 0,
         user: req.user.id,
       });
       console.log("Post has been added!");

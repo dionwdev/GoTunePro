@@ -1,0 +1,421 @@
+/* Box Model Hack */
+* {
+    box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.clear {
+   clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+html{
+    font-size: 62.5%;
+}
+
+
+body {
+    height:100vh;
+    margin:0;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #000000;
+    color:white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* .bg{
+    height:100%;
+    width: 100%;
+    background: linear-gradient(#000000, #49407b);
+    z-index: -100;
+    position: absolute;
+    top:0;
+    left:0;
+} */
+
+
+/******************************************
+/*HEADER
+/*******************************************/
+header {
+    position: absolute;
+    top:0;
+    display:flex;
+    justify-content: space-between;
+    width:100%;
+    padding: 20px;
+    height:95px;
+
+}
+
+header h1{
+    z-index:55;
+}
+
+#navlogo{
+    width:50px;
+    opacity:75%;
+    z-index: 55;
+}
+#navlogo:hover{
+    opacity:100%;
+}
+
+.openbtn {
+  
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0);
+    color: white;
+    border: none;
+    font-size: 3.6rem;
+    width:50px;
+    height: 50px;
+  }
+  
+  .openbtn:hover {
+    color: #00d0ff;
+  }
+
+
+/*infoPanel*/
+
+div#mySidepanel *{
+transition: 0.3s;
+opacity:0;
+
+}
+
+div#mySidepanel.open *{
+    transition: 1.5s;
+    opacity:100%;
+
+    }
+
+.sidepanel  {
+    width: 0;
+    position: fixed;
+    z-index: 20;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    opacity: 95%;
+    text-decoration: none;
+    font-size: 2rem;
+    color:white;
+  }
+  
+  .sidepanel a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #ffffff;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidepanel a:hover {
+    color: #00d0ff;
+  }
+  
+  .sidepanel .closebtn {
+    position: absolute;
+    top: 11px;
+    right: 25px;
+    font-size: 50px;
+  }
+/* Side Header*/
+
+
+#accountLink{
+   font-size: 2rem;
+   width:50%;
+   position: absolute;
+   top: 20px;
+   left: 50px;
+}
+#accountLink:hover{
+    color:#00d0ff;
+}
+
+#sideCover{
+    width: 100px;
+    border-radius: 50%;
+    margin-right: 5px;
+    }
+/* .sideCover-container{
+    border-radius: 50%;
+    animation: rotate 3s linear infinite;
+    animation-play-state: paused;
+    
+}
+.sideCover-container.play{
+    animation-play-state: running;
+} */
+
+/*rotating album art*/
+@keyframes rotate{
+    from{
+         transform:rotate(0deg);
+    }
+    to{
+         transform:rotate(360deg);
+    }
+}
+
+
+.credit-header{
+    display:flex;
+    margin:20px 0;
+    font-size:2rem ;
+    font-weight: 500;
+}
+.sideTitle-container{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    width: auto;
+
+}
+
+
+
+
+
+/* Credits */
+div.credits{
+    /* display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; */
+    padding:0 24px;
+    width: 100%;
+}
+
+  ul.sideCat{
+    font-weight:500;
+    width:fit-content;
+    text-align: center;
+    margin:auto;
+  }
+
+  
+
+  ul.sideCred{
+    font-weight:300;
+  }
+
+  ul.sideCat li{
+    margin:10px;
+  }
+
+  
+
+/*Credit Links*/ 
+
+.creditLinks-header{
+    display:flex;
+    margin:20px 0 10px 0;
+    font-size:2rem ;
+    font-weight: 500;
+}
+
+.creditLinks-header h3{
+    margin:auto;
+   }
+
+.credit-links{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+
+
+
+
+
+/******************************************
+/* MUSIC PLAYER
+/*******************************************/
+.music-container{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 30px;
+    position: relative;
+    margin: 0;
+    
+}
+
+.img-container{
+    position: relative;
+    /* width: 300px; */
+    max-width: 400px;
+}
+
+.img-container img{
+    width:100%;
+    border-radius: .4px;
+  
+}
+
+.navigation{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    margin:30px;
+}
+
+/*Pause Button*/
+.action-btn{
+    background-color: rgba(255, 255, 255, 0);
+    border:0;
+    color:rgb(255, 255, 255);
+    font-size:40px;
+    padding:0px;
+    margin:6px;
+    cursor: pointer;
+}
+/*Play Button*/
+.action-btn-big{
+    background-color: rgba(255, 255, 255, 0);
+    border:0;
+    color:rgb(255, 255, 255);
+    font-size:72px;
+    padding:0;
+    margin:12px;
+    cursor: pointer;
+}
+
+.action-btn-big:focus{
+    outline:0;
+}
+
+/*Song Title Box*/
+.music-info{
+width:100%;
+max-width: 400px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: flex-start;
+margin: 33px 0 0;
+font-size: 2rem;
+}
+
+/*Song Title*/
+#title{
+font-weight: 700;
+}
+
+/*progress bar*/
+.progress-container{
+    background:rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    cursor:pointer;
+    height:4px;
+    width: 100%;
+    margin:20px 0px 0px;
+}
+
+.progress{
+    background:rgb(255, 255, 255);
+    border-radius: 5px;
+    cursor:pointer;
+    height:100%;
+    width: 0%;
+    transition: width 0.1s linear;
+}
+
+
+/*Album Art*/
+#cover.play{
+   
+    -webkit-animation: glowing 1s ease-in-out 1 normal;
+    -moz-animation: glowing 1s ease-in-out 1 normal;
+    animation: glowing 1s ease-in-out 1 normal;
+  }
+
+@-webkit-keyframes glowing {
+    from {
+      box-shadow: 0 0 50px rgb(255, 255, 255);
+    }
+    to {
+      box-shadow: 0 0 10px #ffffff00;
+    }
+  }
+
+
+/*goto icon*/
+div.goto{
+    width: 50px;
+   position: absolute;
+   left: 0;
+   right: 0;
+   margin: 0 auto;
+}
+
+
+img#goto{
+    width:inherit;
+    opacity: 0%;
+}
+
+#goto.play{
+    -webkit-animation: goVisible 1s ease-in-out 1 normal forwards;
+    -moz-animation: goVisible 1s ease-in-out 1 normal forwards;
+    animation: goVisible 1s ease-in-out 1 normal forwards;
+  }
+
+  #goto.pause{
+    -webkit-animation: goVanish .25s ease-in-out 1 normal forwards;
+    -moz-animation: goVanish .25s ease-in-out 1 normal forwards;
+    animation: goVanish .25s ease-in-out 1 normal forwards;
+  }
+
+
+  @-webkit-keyframes goVisible {
+    from {
+      opacity:0%;
+    }
+    to {
+         opacity:100%;
+    }
+  }
+
+  @-webkit-keyframes goVanish {
+    from {
+      opacity:100%;
+    }
+    to {
+         opacity:0%;
+    }
+  }
+
+
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
