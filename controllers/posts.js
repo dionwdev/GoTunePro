@@ -29,6 +29,16 @@ module.exports = {
       console.log(err);
     }
   },
+
+  getEdit: async (req, res) => {
+    try {
+      const post = await Post.findById(req.params.id);
+      res.render("edit.ejs", { post: post, user: req.user});
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  
   createPost: async (req, res) => {
     try {
   
@@ -57,6 +67,7 @@ module.exports = {
       console.log(err);
     }
   },
+
   likePost: async (req, res) => {
     try {
       await Post.findOneAndUpdate(
@@ -71,6 +82,26 @@ module.exports = {
       console.log(err);
     }
   },
+
+  updatePost: async (req, res) => {
+    try {
+      await Post.findOneAndUpdate(
+        { _id: req.params.id },
+        { 
+          title: req.body.title,
+          artist: req.body.artist,
+          writers: req.body.writers,
+          composers: req.body.composers,
+          release: req.body.release,   
+        });
+      console.log("Updated");
+      res.redirect(`/post/${req.params.id}`);
+    } catch (err) {
+      console.log(err);
+    }
+  },
+
+  
   deletePost: async (req, res) => {
     try {
       // Find post by id

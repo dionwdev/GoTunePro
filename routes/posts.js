@@ -8,12 +8,14 @@ const { ensureAuth, ensureGuest } = require("../middleware/auth");
 //Post Routes - simplified for now
 router.get("/:id", ensureAuth, postsController.getPost);
 
+router.get("/edit/:id", ensureAuth, postsController.getEdit);
 
-router.post("/createPost", upload.single("file"), postsController.createPost);
-// const multiUpload = upload.fields([{ name: 'file'}, { name: 'file2'}])
+//const multiUpload = upload.fields([{ name: 'file'}, { name: 'file2'}])
 // router.post("/createPost", multiUpload, postsController.createPost);
+router.post("/createPost", upload.single("file"), postsController.createPost);
 
 
+router.put("/updatePost/:id", postsController.updatePost);
 
 router.put("/likePost/:id", postsController.likePost);
 
