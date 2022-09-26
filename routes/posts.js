@@ -15,9 +15,9 @@ router.get("/edit/:id", ensureAuth, postsController.getEdit);
 router.post("/createPost", upload.single("file"), postsController.createPost);
 
 
-router.put("/updatePost/:id", postsController.updatePost);
-
 router.put("/likePost/:id", postsController.likePost);
+
+router.put("/edit/:id", postsController.updatePost);
 
 router.delete("/deletePost/:id", postsController.deletePost);
 

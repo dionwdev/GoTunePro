@@ -45,7 +45,7 @@ module.exports = {
       // const result = await cloudinary.uploader.upload(req.file.path, {
       //   resource_type: "video"
       // });
-
+  
      const result = await cloudinary.uploader.upload(req.file.path, {
         resource_type: "video"
       });
@@ -93,7 +93,8 @@ module.exports = {
           writers: req.body.writers,
           composers: req.body.composers,
           release: req.body.release,   
-        });
+        }
+      );
       console.log("Updated");
       res.redirect(`/post/${req.params.id}`);
     } catch (err) {
