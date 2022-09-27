@@ -53,7 +53,7 @@ module.exports = {
       await Post.create({
         title: req.body.title,
         artist: req.body.artist,
-        image: "https://res.cloudinary.com/frog123/image/upload/v1664062997/GOTUNElogo_500_500_px_300_300_px_uskniu.jpg",
+        image: "https://res.cloudinary.com/frog123/image/upload/v1664219868/GOTUNElogo_1_xtijg0.jpg",
         audio: result.secure_url,
         writers: req.body.writers,
         composers: req.body.composers,
@@ -87,12 +87,12 @@ module.exports = {
     try {
       await Post.findOneAndUpdate(
         { _id: req.params.id },
-        { 
+        { $set:{
           title: req.body.title,
           artist: req.body.artist,
           writers: req.body.writers,
           composers: req.body.composers,
-          release: req.body.release,   
+          release: req.body.release}   
         }
       );
       console.log("Updated");
