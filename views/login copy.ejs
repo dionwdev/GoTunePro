@@ -1,25 +1,9 @@
 <%- include('partials/header') -%>
-<section class="heading-page header-text" id="top">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12">
-        <h6>.</h6>
-        <h2>.</h2>
-      </div>
-    </div>
-  </div>
-</section>
 
-<section class="sectionFull">
-<div class="signupContainer">
-
-  <div class="gotempBox">
-
-    <div class="down-content">
-     <h4> Log In</h4>
-    </div>
-
-    <% if (locals.messages.errors) { %> <% messages.errors.forEach( el => { %>
+<main class="container">
+  <div class="row justify-content-center">
+    <section class="col-6 mt-5">
+      <% if (locals.messages.errors) { %> <% messages.errors.forEach( el => { %>
       <div class="alert alert-danger"><%= el.msg %></div>
       <% }) %> <% } %> <% if (locals.messages.info) { %> <%
       messages.info.forEach( el => { %>
@@ -47,17 +31,10 @@
             name="password"
           />
         </div>
-        <button type="submit" class="main-button-yellow">Submit</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
       </form>
-
-    
-   
+    </section>
   </div>
-</div>
-
-
-</div>
-</section>
-
+</main>
 
 <%- include('partials/footer') -%>

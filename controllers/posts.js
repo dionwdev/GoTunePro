@@ -51,13 +51,13 @@ module.exports = {
       });
 
       await Post.create({
-        title: req.body.title,
-        artist: req.body.artist,
+        title: " ",
+        artist: " ",
         image: "https://res.cloudinary.com/frog123/image/upload/v1664219868/GOTUNElogo_1_xtijg0.jpg",
         audio: result.secure_url,
-        writers: req.body.writers,
-        composers: req.body.composers,
-        release: req.body.release,
+        writers: " ",
+        composers: " ",
+        release: " ",
         cloudinaryId: result.public_id,
         user: req.user.id,
       });

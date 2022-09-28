@@ -155,7 +155,7 @@ body {
   }
 }
 
-.main-button-red a {
+.main-button-red{
   font-size: 13px;
   color: #fff;
   background-color: #a12c2f;
@@ -167,15 +167,40 @@ body {
   transition: all .3s;
 }
 
+.main-button-red a {
+  font-size: 13px;
+  color: #fff;
+  background-color: #a12c2f;
+  display: inline-block;
+  border-radius: 22px;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: all .3s;
+}
+
 .main-button-red a:hover {
   opacity: 0.9;
+}
+
+.main-button-yellow{
+  font-size: 13px;
+  color: #fff;
+  background-color: #df6f04;
+  padding: 12px 30px;
+  display: inline-block;
+  border-radius: 22px;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: all .3s;
+  
+    border-style: none;
+    
 }
 
 .main-button-yellow a {
   font-size: 13px;
   color: #fff;
   background-color: #df6f04;
-  padding: 12px 30px;
   display: inline-block;
   border-radius: 22px;
   font-weight: 500;
@@ -458,7 +483,7 @@ header
   -o-transition: all 0.4s;
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
-  background-color: #1e1e1e;
+  background-color: #ffffff;
   display: block;
   position: absolute;
   width: 30px;
@@ -478,13 +503,13 @@ header
   -o-transition: all 0.4s;
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
-  background-color: #1e1e1e;
+  background-color: #ffffff;
   display: block;
   position: absolute;
   width: 30px;
   height: 2px;
   left: 0;
-  width: 75%;
+  width: 100%;
 }
 
 .background-header .main-nav .menu-trigger span:before,
@@ -1331,7 +1356,7 @@ section.contact-us {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 140px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
 }
 
 section.contact-us #contact {
@@ -1434,7 +1459,6 @@ section.contact-us .right-info ul li span {
 
 .footer {
   text-align: center;
-  margin-top: 140px;
   border-top: 1px solid rgba(250,250,250,0.15);
   padding: 50px 0px;
 }
@@ -1460,8 +1484,8 @@ section.heading-page {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  padding-top: 230px;
-  padding-bottom: 110px;
+  /* padding-top: 230px; */
+  /* padding-bottom: 110px; */
   text-align: center;
 }
 
@@ -1492,7 +1516,7 @@ upcoming meetings page
 */
 
 section.meetings-page {
-  background-image: url(/imgs/meetings-page-bg.jpg);
+  background-image: url(/imgs/meetings-bg.jpg);
   background-position: center center;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -1558,7 +1582,7 @@ section.meetings-page .main-button-red {
 section.meetings-page .main-button-red a {
   padding: 12px 60px;
   text-align: center;
-  margin-top: 30px;
+  /* margin-top: 30px; */
 }
 
 section.meetings-page .pagination ul li.active a,
@@ -1841,3 +1865,47 @@ responsive
 .mycenter{
   margin:auto;
 }
+
+
+.signupContainer{
+  display: flex;
+  flex-direction: row;
+  background-image: url(/imgs/apply-bg.jpg);
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 140px 0px;
+
+  width: 100vw;
+  height: 100vh;
+}
+
+.gotempBox {
+  margin:auto;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(250,250,250,0.15);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  text-align: center;
+  color: #fff;
+  padding: 40px;
+  width:400px;
+}
+
+.gotempBox p{
+  color: #fff;
+  margin: 5px 0px 25px;
+}
+
+.gotempBox .form-text{
+  color: #f5a425;
+}
+/* 
+.sectionFull{
+  width: 100vw;
+  height: 100vh;
+} */

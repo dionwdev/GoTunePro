@@ -1,0 +1,75 @@
+<%- include('partials/header') -%>
+<div class="container">
+  <div class="row mt-5">
+      <div class="col-6">
+          <div>
+              <p><strong>User Name</strong>: <%= user.userName %></p>
+              <p><strong>Email</strong>: <%= user.email %></p>
+              <a href="/logout" class="col-3 btn btn-primary">Logout</a>
+          </div>
+          <div class="mt-5">
+            <h2>Add a post</h2>
+            <form action="/post/createPost" enctype="multipart/form-data" method="POST">
+              <div class="mb-3">
+                  <label for="title" class="form-label">Title</label>
+                  <input type="text" class="form-control" id="title" name="title">
+              </div>
+
+              <div class="mb-3">
+                <label for="artist" class="form-label">Artist</label>
+                <input type="text" class="form-control" id="artist" name="artist">
+              </div>
+
+              <div class="mb-3">
+                <label for="writers" class="form-label">Writers</label>
+                <textarea class="form-control" id="writers" name="writers"></textarea>
+              </div>
+
+              <div class="mb-3">
+                <label for="composers" class="form-label">Composers</label>
+                <textarea class="form-control" id="composers" name="composers"></textarea>
+              </div>
+
+              <div class="mb-3">
+                <label for="release" class="form-label">Release Date</label>
+                <textarea class="form-control" id="composers" name="release"></textarea>
+              </div>
+
+              <div class="mb-3">
+                <label for="file" class="form-label">file</label>
+                <input type="file" class="form-control" id="file" name="file">
+              </div>
+
+              <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
+            </form>
+          </div>
+      </div>
+      <div class="col-6">
+        <ul class="row list-unstyled">
+        <% for(var i=0; i<posts.length; i++) {%>
+          <li class="col-6 justify-content-between mt-5">
+            <a href="/post/<%= posts[i]._id%>">
+              <img class="img-fluid" src="<%= posts[i].image%>">
+            </a>
+
+            <form action="/post/edit/<%= posts[i]._id%>" enctype="multipart/form-data" method="GET">
+            <button type="submit" class="btn btn-primary" value="Edit">edit</button>
+            </form>
+
+            <form action="/post/deletePost/<%= posts[i].id%>?_method=DELETE" method="POST"
+            class="col-3">
+            <button class="btn btn-primary fa fa-trash" type="submit"></button>
+            </form>
+            
+          </li>
+        <% } %>
+        
+        </ul>
+        <div class="row justify-content-center mt-5">
+          <a class="btn btn-primary" href="/feed">Return to Feed</a>
+        </div>  
+      </div>  
+    </div>
+  </div>
+</div>
+<%- include('partials/footer') -%>

@@ -1,0 +1,46 @@
+<%- include('partials/header') -%>
+<div class="container">
+  <div class="row mt-5">
+      <div class="col-6">
+          <div>
+              <p><strong>User Name</strong>: <%= user.userName %></p>
+              <p><strong>Email</strong>: <%= user.email %></p>
+              <a href="/logout" class="col-3 btn btn-primary">Logout</a>
+          </div>
+          <div class="mt-5">
+            <h2>Track Configuration</h2>
+            <form action="/post/edit/<%= post.id %>?_method=PUT" method="POST">
+
+              <div class="mb-3">
+                  <label for="title" class="form-label">Title</label>
+                  <textarea class="form-control" id="title" name="title"><%= post.title %></textarea>
+              </div>
+
+              <div class="mb-3">
+                <label for="artist" class="form-label">Artist</label>
+                <textarea class="form-control" id="artist" name="artist"><%= post.artist %></textarea>
+              </div>
+
+              <!-- <div class="mb-3">
+                <label for="writers" class="form-label">Writers</label>
+                <textarea class="form-control" id="writers" name="writers"><%= post.writers %></textarea>
+              </div>
+
+              <div class="mb-3">
+                <label for="composers" class="form-label">Composers</label>
+                <textarea class="form-control" id="composers" name="composers"><%= post.composers %></textarea>
+              </div>
+
+              <div class="mb-3">
+                <label for="release" class="form-label">Release Date</label>
+                <textarea class="form-control" id="composers" name="release"><%= post.release %></textarea>
+              </div> -->
+              
+              <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
+            </form>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%- include('partials/footer') -%>
