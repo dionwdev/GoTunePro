@@ -2014,3 +2014,27 @@ responsive
   width:100px;
   display:flex;
 }
+
+.blank4040{
+  width:40px;
+}
+
+.services .item.featuredBG1{
+  background: url(/imgs/feat1.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.services .item.featuredBG2{
+  background: url(/imgs/feat2.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.opac0{
+  opacity: 0;
+}
