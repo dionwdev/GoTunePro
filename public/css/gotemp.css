@@ -1465,11 +1465,11 @@ section.contact-us .right-info ul li span {
 .footer p {
   text-transform: uppercase;
   font-size: 14px;
-  color: #fff;
+  color: #8d8d8d;
 }
 
 .footer p a {
-  color: #f5a425;
+  color: #765116;
 }
 
 
@@ -1516,7 +1516,7 @@ upcoming meetings page
 */
 
 section.meetings-page {
-  background-image: url(/imgs/meetings-bg.jpg);
+  background-image: url(/imgs/meetings-bg5.jpg);
   background-position: center center;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -1875,11 +1875,25 @@ responsive
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 140px 0px;
+  /* padding: 140px 0px; */
 
   width: 100vw;
   height: 100vh;
 }
+
+.profileContainer{
+  display: flex;
+  flex-direction: row;
+  background-image: url(/imgs/apply-bg.jpg);
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+}
+
+
 
 .gotempBox {
   margin:auto;
@@ -1894,6 +1908,28 @@ responsive
   color: #fff;
   padding: 40px;
   width:400px;
+  text-align: left;
+}
+
+.gotempBox2 {
+  margin:auto;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(250,250,250,0.15);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  text-align: center;
+  color: #fff;
+  padding: 40px;
+  width:45%;
+  text-align: left;
+}
+
+.gotempBox2 p{
+  color: #fff;
+  margin: 5px 0px 25px;
 }
 
 .gotempBox p{
@@ -1909,3 +1945,72 @@ responsive
   width: 100vw;
   height: 100vh;
 } */
+
+.gotempBox textarea{
+  height: 37px;
+}
+
+
+@media (max-width: 900px){
+  .profileContainer{
+    flex-direction: column;}
+
+  .gotempBox2 {
+    width: 90%;
+    margin: 50px auto;
+  }
+  
+  }
+
+
+.tracklist ul{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.trackRow{
+  width: 100%;
+  display: flex;
+  margin: 15px 0;
+}
+
+/*cover thumbnail */
+.tracklist img.trackthumb{
+ width:50px;
+}
+
+/* title & sections */
+.tracklist div.titleBox{
+  display: flex;
+  flex-direction: column;
+  height:50px;
+  padding: 0 0 0 8px;
+}
+
+/* title & artist */
+.tracklist div.titleBox p{
+  font-size: 15px;
+  margin:0px;
+}
+
+.tracklistButton{
+  color:#ffffff;
+  width:50px;
+  height: 50px;
+  font-size: 30px;
+  padding: 1px 6px;
+  border:none;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.tracklistButton:hover{
+  color:#f5a425;
+}
+
+.listEditBox{
+  width:100px;
+  display:flex;
+}

@@ -18,7 +18,7 @@
 	<body>
 
 	<header>
-		<h1><img id="navlogo" alt="GoTune.Pro" src="/imgs/navlogo.png"></h1>
+		<h1><a href="/profile"><img id="navlogo" alt="GoTune.Pro" src="/imgs/navlogo.png"></a></h1>
 		<div class="goto"><img id="goto" alt="goto" src="/imgs//goto1.gif"></div>
 		
 		<button class="openbtn" onclick="openNav()">☰</button>  
@@ -28,7 +28,18 @@
 	<div id="mySidepanel" class="sidepanel">
 		<!-- Sign in and X button -->
 		<div class="side-top">
-		<a href="#" id="accountLink">log in/sign up</a>
+			<% if(user==undefined){ %>
+				<div class="accountLink" >
+				<a href="/signup" >Sign Up</a>
+				<a href="/login" >Log In</a>
+				</div>
+			  <% } %>
+			  <% if(user !==undefined){ %>
+				<div class="accountLink" >
+				<a href="/profile" >Profile</a>
+				<a href="/logout" >Log Out</a>
+				</div>
+			  <% } %>
 		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
 		</div>
 		

@@ -87,7 +87,7 @@ header h1{
   }
   
   .openbtn:hover {
-    color: #00d0ff;
+    color: #f5a425;
   }
 
 
@@ -132,7 +132,7 @@ div#mySidepanel.open *{
   }
   
   .sidepanel a:hover {
-    color: #00d0ff;
+    color: #f5a425;
   }
   
   .sidepanel .closebtn {
@@ -152,7 +152,24 @@ div#mySidepanel.open *{
    left: 50px;
 }
 #accountLink:hover{
-    color:#00d0ff;
+    color:#f5a425;
+}
+
+.accountLink{
+  display:flex;
+  justify-content: flex-start;
+  width:50%;
+  position: absolute;
+  top: 20px;
+  left: 75px;
+}
+.accountLink a{
+  font-size: 2rem;
+  padding:5px;
+}
+
+.accountLink a:hover{
+   color:#f5a425;
 }
 
 #sideCover{
