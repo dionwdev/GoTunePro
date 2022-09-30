@@ -638,16 +638,17 @@ header
     -o-transition: all 0s ease 0s;
     transition: all 0s ease 0s;
     margin-left: 0px;
+    background: #1b1c1cf2;
+    border-radius: 22px;
   }
   /* .header-area .main-nav .nav li:first-child {
     border-top: 1px solid #eee;
   } */
   .header-area.header-sticky .nav {
-    margin-top: 100px !important;
+    margin-top: 127px !important;
   }
   .header-area .main-nav .nav li {
     width: 100%;
-    background: #00000063;
     padding-left: 0px !important;
     padding-right: 0px !important;
   }
@@ -1975,6 +1976,11 @@ responsive
   width: 100%;
   display: flex;
   margin: 15px 0;
+  background: rgb(160,160,160);
+  background: linear-gradient(90deg, rgba(160,160,160,1) 0%, rgb(255 255 255 / 0%) 100%);
+  padding: 10px;
+  border-radius: 22px;
+  
 }
 
 /*cover thumbnail */
@@ -2038,3 +2044,4 @@ responsive
 .opac0{
   opacity: 0;
 }
+

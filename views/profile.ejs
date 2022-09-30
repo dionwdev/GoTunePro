@@ -31,24 +31,27 @@
                   <% for(var i=0; i<posts.length; i++) {%>
                     <li>
                     <div class="trackRow">
+
+                      <div class="listEditBox">
+                        <form action="/post/deletePost/<%= posts[i].id%>?_method=DELETE" method="POST" >
+                          <button class="fa fa-trash tracklistButton" type="submit"></button>
+                        </form>
+
+                        <form action="/post/edit/<%= posts[i]._id%>" enctype="multipart/form-data" method="GET" class="col-3">
+                          <button type="submit" class="fa fa-gear tracklistButton" value="Edit"></button>
+                          </form>
+                          
+                      </div> 
+
                       <a href="/post/<%= posts[i]._id%>">
                         <img class="trackthumb" src="<%= posts[i].image%>">
                       </a>
-
+                      <a href="/post/<%= posts[i]._id%>">
                         <div class="titleBox">
                           <p><%= posts[i].title%></p>
                           <p><%= posts[i].artist%></p>
                         </div>
-
-                      <div class="listEditBox">
-                        <form action="/post/edit/<%= posts[i]._id%>" enctype="multipart/form-data" method="GET">
-                          <button type="submit" class="fa fa-gear tracklistButton" value="Edit"></button>
-                          </form>
-                          <form action="/post/deletePost/<%= posts[i].id%>?_method=DELETE" method="POST"
-                          class="col-3">
-                          <button class="fa fa-trash tracklistButton" type="submit"></button>
-                        </form>
-                      </div>
+                      </a>
                         
                     </div>
                     
