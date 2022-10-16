@@ -1,4 +1,6 @@
 {
+    "version": 2,
+    "name": "GoTunePro",
     "builds": [
         {
             "src": "./server.js",
