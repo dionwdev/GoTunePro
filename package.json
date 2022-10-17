@@ -28,5 +28,8 @@
     "passport": "^0.6.0",
     "passport-local": "^1.0.0",
     "validator": "^13.6.0"
+  },
+  "devDependencies": {
+    "@vercel/node": "^2.5.25"
   }
 }
