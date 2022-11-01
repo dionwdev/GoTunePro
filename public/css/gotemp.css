@@ -2026,19 +2026,21 @@ responsive
 }
 
 .services .item.featuredBG1{
-  background: url(/imgs/feat1.jpg) no-repeat center center fixed; 
-  -webkit-background-size: cover;
+  background: url(/imgs/feat1.jpg) no-repeat center; 
+  /* -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
+  background-size: cover; */
+  width: 100%;
 }
 
 .services .item.featuredBG2{
-  background: url(/imgs/feat2.jpg) no-repeat center center fixed; 
-  -webkit-background-size: cover;
+  background: url(/imgs/feat2.jpg) no-repeat center; 
+  /* -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
+  background-size: cover; */
+  width: 100%
 }
 
 .opac0{
