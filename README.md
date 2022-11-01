@@ -30,7 +30,7 @@ A variaty of ways to use forms to intereact with multiple databases.
 
 ##The Engineers:
 
-**Dion Wilson:** https://dionwilson.dev/
+**Dion Wilson:** https://dionwilson.dev
 
 
 
