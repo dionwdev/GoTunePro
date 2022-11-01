@@ -721,8 +721,7 @@ banner
     min-height: 100vh;
     max-width: 100%;
     max-height: 100vh;
-    object-fit: cover;
-    z-index: -1;
+    z-index: -7;
 }
 
 #bg-video::-webkit-media-controls {
@@ -731,7 +730,7 @@ banner
 
 .video-overlay {
     position: absolute;
-    /* background-color: rgba(31,39,43,0.75); */
+    background-color: rgba(31,39,43,0.75);
     top: 0;
     left: 0;
     bottom: 0;
