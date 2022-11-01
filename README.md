@@ -1,7 +1,8 @@
 # GoTune.Pro
 GoTune.Pro is a free tool for artists to upload music and share on the go!
 
-**Link to project:** https://gotune.pro/
+**link to demo site:** https://gotune-beta.herokuapp.com/
+<br>**launch site:** https://gotune.pro/
 
 ![GoTune.Pro](/readthumb2.gif)
 
@@ -23,6 +24,8 @@ GoTune.Pro allows users to create a customized page for a song, acting as both a
 GoTune.Pro is made with the intention to make it easy for artists to present work in a visually fun way that's easy to use and share with the world. A constant strive is to include methods to prevent and report misuse of our services.
 </br>
 </br>**Up Next:** Demo accounts, testing and introducing new features as they're developed.
+</br>-background images
+</br>-upload limits
 
 ## Lessons Learned:
 A variaty of ways to use forms to intereact with multiple databases.
